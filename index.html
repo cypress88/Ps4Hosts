@@ -7,14 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #7b71ba;
-      --panel-bg: #4c3f91;
-      --card-bg: #e2e0f4;
-      --card-inner: #f2f0fb;
-      --border-color: #1a153b;
-      --accent-purple: #6246ea;
-      --accent-green: #2ec4b6;
-      --text-dark: #1f1a3a;
+      --bg-color: #6155a6;
+      --panel-bg: #3c327b;
+      --card-bg: #dcd6f7;
+      --card-inner: #f4f2ff;
+      --border-color: #161036;
+      --accent-purple: #5c3cfa;
+      --accent-green: #00e676;
+      --text-dark: #120e29;
+      --text-muted: #4a4270;
       --text-light: #ffffff;
       --font-pixel: 'Press Start 2P', monospace;
       --font-clean: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -34,117 +35,158 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1.5rem 1rem;
+      padding: 2rem 1.5rem;
     }
 
+    /* Расширенный контейнер под экраны TV */
     .container {
       width: 100%;
-      max-width: 650px;
+      max-width: 900px;
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 1.25rem;
     }
 
-    /* Header Panel */
+    /* Шапка сайта */
     .header-panel {
       background: var(--panel-bg);
-      border: 3px solid var(--border-color);
-      border-radius: 12px;
-      padding: 0.85rem 1.2rem;
+      border: 4px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.2rem 1.8rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 0 var(--border-color);
+      box-shadow: 0 6px 0 var(--border-color);
     }
 
     .brand-title {
       font-family: var(--font-pixel);
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       color: var(--text-light);
-      text-shadow: 2px 2px 0 var(--border-color);
+      text-shadow: 3px 3px 0 var(--border-color);
+      letter-spacing: 1px;
     }
 
     .status-badge {
       background: var(--card-inner);
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      padding: 0.35rem 0.75rem;
+      border: 3px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
       font-family: var(--font-pixel);
-      font-size: 0.65rem;
+      font-size: 0.75rem;
+      color: var(--text-dark);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+      gap: 0.6rem;
+      box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
     }
 
     .dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background-color: var(--accent-green);
       display: inline-block;
+      box-shadow: 0 0 6px var(--accent-green);
     }
 
-    /* Host Item Card */
+    /* Карточка хоста */
     .host-card {
       background: var(--card-inner);
-      border: 3px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1rem;
+      border: 4px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.3rem 1.6rem;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-      box-shadow: 0 4px 0 var(--border-color);
+      gap: 1rem;
+      box-shadow: 0 6px 0 var(--border-color);
     }
 
     .card-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     .host-name {
       font-family: var(--font-pixel);
-      font-size: 0.85rem;
+      font-size: 1.15rem;
       color: var(--text-dark);
+      line-height: 1.4;
     }
 
     .fw-badge {
       background: var(--border-color);
       color: var(--text-light);
       font-family: var(--font-pixel);
-      font-size: 0.55rem;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
+      font-size: 0.7rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 8px;
       white-space: nowrap;
     }
 
     .card-url {
-      font-size: 0.75rem;
-      color: #5d5589;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
       word-break: break-all;
     }
 
+    .card-actions {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      margin-top: 0.2rem;
+    }
+
+    /* Увеличенные кнопки под курсор геймпада */
     .card-action-btn {
-      width: fit-content;
       background: var(--card-bg);
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      padding: 0.5rem 1rem;
+      border: 3px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 1.4rem;
       font-family: var(--font-pixel);
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       cursor: pointer;
-      box-shadow: 0 2px 0 var(--border-color);
+      box-shadow: 0 4px 0 var(--border-color);
       text-decoration: none;
       color: var(--text-dark);
       display: inline-block;
-      transition: background 0.1s;
+      transition: background 0.1s, transform 0.1s;
     }
 
-    .card-action-btn:hover {
+    .card-action-btn:hover, .card-action-btn:focus {
       background: var(--panel-bg);
       color: var(--text-light);
+      outline: none;
+    }
+
+    .card-action-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 var(--border-color);
+    }
+
+    /* Toast Уведомление */
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      background: var(--border-color);
+      color: var(--text-light);
+      font-family: var(--font-pixel);
+      font-size: 0.8rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 10px;
+      border: 3px solid var(--accent-green);
+      transition: transform 0.2s ease;
+      pointer-events: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
@@ -168,7 +210,10 @@
         <span class="fw-badge">FW 5.05 - 11.00+</span>
       </div>
       <div class="card-url">https://psx8.github.io/</div>
-      <a href="https://psx8.github.io/" target="_blank" class="card-action-btn">Check this host</a>
+      <div class="card-actions">
+        <a href="https://psx8.github.io/" class="card-action-btn">Open Host</a>
+        <button class="card-action-btn" onclick="copyUrl('https://psx8.github.io/')">Copy</button>
+      </div>
     </div>
 
     <div class="host-card">
@@ -177,7 +222,10 @@
         <span class="fw-badge">FW 9.00 - 11.00+</span>
       </div>
       <div class="card-url">https://moddedwarfare.github.io/aiofix/</div>
-      <a href="https://moddedwarfare.github.io/aiofix/" target="_blank" class="card-action-btn">Check this host</a>
+      <div class="card-actions">
+        <a href="https://moddedwarfare.github.io/aiofix/" class="card-action-btn">Open Host</a>
+        <button class="card-action-btn" onclick="copyUrl('https://moddedwarfare.github.io/aiofix/')">Copy</button>
+      </div>
     </div>
 
     <div class="host-card">
@@ -186,7 +234,10 @@
         <span class="fw-badge">FW 5.05 - 11.00+</span>
       </div>
       <div class="card-url">http://webkitty.arabpixel.net/</div>
-      <a href="http://webkitty.arabpixel.net/" target="_blank" class="card-action-btn">Check this host</a>
+      <div class="card-actions">
+        <a href="http://webkitty.arabpixel.net/" class="card-action-btn">Open Host</a>
+        <button class="card-action-btn" onclick="copyUrl('http://webkitty.arabpixel.net/')">Copy</button>
+      </div>
     </div>
 
     <div class="host-card">
@@ -195,7 +246,10 @@
         <span class="fw-badge">FW 10.00 - 13.52+</span>
       </div>
       <div class="card-url">https://mansoor0x.github.io/polpNO/</div>
-      <a href="https://mansoor0x.github.io/polpNO/" target="_blank" class="card-action-btn">Check this host</a>
+      <div class="card-actions">
+        <a href="https://mansoor0x.github.io/polpNO/" class="card-action-btn">Open Host</a>
+        <button class="card-action-btn" onclick="copyUrl('https://mansoor0x.github.io/polpNO/')">Copy</button>
+      </div>
     </div>
 
     <div class="host-card">
@@ -204,7 +258,10 @@
         <span class="fw-badge">FW 9.00 - 11.00+</span>
       </div>
       <div class="card-url">https://rawgame4.github.io/</div>
-      <a href="https://rawgame4.github.io/" target="_blank" class="card-action-btn">Check this host</a>
+      <div class="card-actions">
+        <a href="https://rawgame4.github.io/" class="card-action-btn">Open Host</a>
+        <button class="card-action-btn" onclick="copyUrl('https://rawgame4.github.io/')">Copy</button>
+      </div>
     </div>
 
     <div class="host-card">
@@ -213,10 +270,40 @@
         <span class="fw-badge">FW 5.05 - 9.00</span>
       </div>
       <div class="card-url">https://gamerhack.github.io/g2all/index.html</div>
-      <a href="https://gamerhack.github.io/g2all/index.html" target="_blank" class="card-action-btn">Check this host</a>
+      <div class="card-actions">
+        <a href="https://gamerhack.github.io/g2all/index.html" class="card-action-btn">Open Host</a>
+        <button class="card-action-btn" onclick="copyUrl('https://gamerhack.github.io/g2all/index.html')">Copy</button>
+      </div>
     </div>
 
   </div>
+
+  <div id="toast">URL COPIED!</div>
+
+  <script>
+    function copyUrl(url) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(showToast);
+      } else {
+        // Фоллбек для старых движков WebKit на PS4
+        const textArea = document.createElement("textarea");
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        showToast();
+      }
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 1500);
+    }
+  </script>
 
 </body>
 </html>
