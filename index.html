@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS4Host</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #7b71ba;
+      --panel-bg: #4c3f91;
+      --card-bg: #e2e0f4;
+      --card-inner: #f2f0fb;
+      --border-color: #1a153b;
+      --accent-purple: #6246ea;
+      --accent-green: #2ec4b6;
+      --text-dark: #1f1a3a;
+      --text-light: #ffffff;
+      --font-pixel: 'Press Start 2P', monospace;
+      --font-clean: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      font-family: var(--font-clean);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    /* Header Panel */
+    .header-panel {
+      background: var(--panel-bg);
+      border: 3px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.85rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 0 var(--border-color);
+    }
+
+    .brand-title {
+      font-family: var(--font-pixel);
+      font-size: 1.1rem;
+      color: var(--text-light);
+      text-shadow: 2px 2px 0 var(--border-color);
+    }
+
+    .status-badge {
+      background: var(--card-inner);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.35rem 0.75rem;
+      font-family: var(--font-pixel);
+      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-green);
+      display: inline-block;
+    }
+
+    /* Host Item Card */
+    .host-card {
+      background: var(--card-inner);
+      border: 3px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      box-shadow: 0 4px 0 var(--border-color);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .host-name {
+      font-family: var(--font-pixel);
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    .fw-badge {
+      background: var(--border-color);
+      color: var(--text-light);
+      font-family: var(--font-pixel);
+      font-size: 0.55rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .card-url {
+      font-size: 0.75rem;
+      color: #5d5589;
+      word-break: break-all;
+    }
+
+    .card-action-btn {
+      width: fit-content;
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-pixel);
+      font-size: 0.6rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--border-color);
+      text-decoration: none;
+      color: var(--text-dark);
+      display: inline-block;
+      transition: background 0.1s;
+    }
+
+    .card-action-btn:hover {
+      background: var(--panel-bg);
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Bar -->
+    <div class="header-panel">
+      <div class="brand-title">PS4Host</div>
+      <div class="status-badge">
+        <span class="dot"></span>
+        <span>ONLINE</span>
+      </div>
+    </div>
+
+    <!-- Hosts List -->
+    <div class="host-card">
+      <div class="card-top">
+        <span class="host-name">PSX8 Host</span>
+        <span class="fw-badge">FW 5.05 - 11.00+</span>
+      </div>
+      <div class="card-url">https://psx8.github.io/</div>
+      <a href="https://psx8.github.io/" target="_blank" class="card-action-btn">Check this host</a>
+    </div>
+
+    <div class="host-card">
+      <div class="card-top">
+        <span class="host-name">ModdedWarfare AIOFix</span>
+        <span class="fw-badge">FW 9.00 - 11.00+</span>
+      </div>
+      <div class="card-url">https://moddedwarfare.github.io/aiofix/</div>
+      <a href="https://moddedwarfare.github.io/aiofix/" target="_blank" class="card-action-btn">Check this host</a>
+    </div>
+
+    <div class="host-card">
+      <div class="card-top">
+        <span class="host-name">WebKitty ArabPixel</span>
+        <span class="fw-badge">FW 5.05 - 11.00+</span>
+      </div>
+      <div class="card-url">http://webkitty.arabpixel.net/</div>
+      <a href="http://webkitty.arabpixel.net/" target="_blank" class="card-action-btn">Check this host</a>
+    </div>
+
+    <div class="host-card">
+      <div class="card-top">
+        <span class="host-name">Mansoor0x polpNO</span>
+        <span class="fw-badge">FW 10.00 - 13.52+</span>
+      </div>
+      <div class="card-url">https://mansoor0x.github.io/polpNO/</div>
+      <a href="https://mansoor0x.github.io/polpNO/" target="_blank" class="card-action-btn">Check this host</a>
+    </div>
+
+    <div class="host-card">
+      <div class="card-top">
+        <span class="host-name">RawGame4 Host</span>
+        <span class="fw-badge">FW 9.00 - 11.00+</span>
+      </div>
+      <div class="card-url">https://rawgame4.github.io/</div>
+      <a href="https://rawgame4.github.io/" target="_blank" class="card-action-btn">Check this host</a>
+    </div>
+
+    <div class="host-card">
+      <div class="card-top">
+        <span class="host-name">GamerHack G2ALL</span>
+        <span class="fw-badge">FW 5.05 - 9.00</span>
+      </div>
+      <div class="card-url">https://gamerhack.github.io/g2all/index.html</div>
+      <a href="https://gamerhack.github.io/g2all/index.html" target="_blank" class="card-action-btn">Check this host</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
