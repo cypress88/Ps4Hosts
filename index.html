@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PS4Host</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -17,7 +19,8 @@
       --text-dark: #120e29;
       --text-muted: #2f2858;
       --text-light: #ffffff;
-      --font-pixel: 'Press Start 2P', monospace;
+      /* Резервные шрифты с авто-отключением сглаживания для пиксельного вида */
+      --font-pixel: 'Press Start 2P', 'Courier New', Courier, monospace;
       --font-clean: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
@@ -25,6 +28,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      /* Отключаем сглаживание шрифтов для пиксельного эффекта на любых экранах */
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: unset;
+      font-smooth: never;
     }
 
     body {
@@ -38,7 +45,6 @@
       padding: 2rem 1.5rem;
     }
 
-    /* Широкий контейнер для комфортного отображения на ТВ */
     .container {
       width: 95%;
       max-width: 1100px;
@@ -47,7 +53,6 @@
       gap: 1.5rem;
     }
 
-    /* Шапка сайта */
     .header-panel {
       background: var(--panel-bg);
       border: 4px solid var(--border-color);
@@ -65,6 +70,7 @@
       color: var(--text-light);
       text-shadow: 3px 3px 0 var(--border-color);
       letter-spacing: 1px;
+      -webkit-font-smoothing: none;
     }
 
     .status-badge {
@@ -80,6 +86,7 @@
       justify-content: center;
       gap: 0.7rem;
       box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
+      -webkit-font-smoothing: none;
     }
 
     .dot {
@@ -91,7 +98,6 @@
       box-shadow: 0 0 8px var(--accent-green);
     }
 
-    /* Карточка хоста */
     .host-card {
       background: var(--card-inner);
       border: 4px solid var(--border-color);
@@ -121,9 +127,9 @@
       font-size: 1.3rem;
       color: var(--text-dark);
       line-height: 1.4;
+      -webkit-font-smoothing: none;
     }
 
-    /* Отцентрированный плашка версии ПО */
     .fw-badge {
       background: var(--border-color);
       color: var(--text-light);
@@ -137,9 +143,9 @@
       justify-content: center;
       text-align: center;
       line-height: 1;
+      -webkit-font-smoothing: none;
     }
 
-    /* Четкий URL */
     .card-url {
       font-size: 1.05rem;
       font-weight: 700;
@@ -153,7 +159,6 @@
       align-items: center;
     }
 
-    /* Кнопка во всю ширину */
     .card-action-btn {
       width: 100%;
       text-align: center;
@@ -171,6 +176,7 @@
       align-items: center;
       justify-content: center;
       transition: background 0.15s, color 0.15s;
+      -webkit-font-smoothing: none;
     }
 
     .card-action-btn:hover, .card-action-btn:focus {
@@ -189,7 +195,6 @@
 
   <div class="container">
     
-    <!-- Top Bar -->
     <div class="header-panel">
       <div class="brand-title">PS4Host</div>
       <div class="status-badge">
@@ -198,7 +203,6 @@
       </div>
     </div>
 
-    <!-- Hosts List -->
     <div class="host-card">
       <div class="card-top">
         <span class="host-name">PSX8 Host</span>
