@@ -69,7 +69,7 @@
       font-size: 1.8rem;
       color: var(--text-light);
       text-shadow: 3px 3px 0 var(--border-color);
-      letter-spacing: 0; /* Убрали лишний межбуквенный интервал, уводящий букву */
+      letter-spacing: 0;
     }
 
     .status-badge {
@@ -132,19 +132,19 @@
       line-height: 1.2;
     }
 
-    /* Чёткий URL */
+    /* Чистый URL без пунктира */
     .card-url {
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--text-muted);
-      background: rgba(22, 16, 54, 0.08);
-      padding: 0.7rem 1rem;
-      border-radius: 8px;
+      background: rgba(22, 16, 54, 0.06);
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
       word-break: break-all;
-      border: 2px dashed rgba(22, 16, 54, 0.3);
+      border: 2px solid rgba(22, 16, 54, 0.12); /* Аккуратная тонкая сплошная рамка */
     }
 
-    /* Жёстко отцентрированная кнопка для WebKit PS4 */
+    /* Кнопка */
     .card-action-btn {
       width: 100%;
       height: 56px;
