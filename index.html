@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PS4Host</title>
+  <title>PS4Hosts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
       --text-dark: #120e29;
       --text-muted: #2f2858;
       --text-light: #ffffff;
-      --font-pixel: 'Press Start 2P', 'Courier New', Courier, monospace;
+      --font-pixel: 'Press Start 2P', monospace;
       --font-clean: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
@@ -27,9 +27,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      -webkit-font-smoothing: none;
-      -moz-osx-font-smoothing: unset;
-      font-smooth: never;
+      -webkit-font-smoothing: none !important;
+      -moz-osx-font-smoothing: unset !important;
+      font-smooth: never !important;
+      text-rendering: optimizeSpeed;
     }
 
     body {
@@ -51,11 +52,12 @@
       gap: 1.5rem;
     }
 
+    /* Шапка сайта */
     .header-panel {
       background: var(--panel-bg);
       border: 4px solid var(--border-color);
       border-radius: 16px;
-      padding: 1.4rem 2rem;
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -67,8 +69,7 @@
       font-size: 1.8rem;
       color: var(--text-light);
       text-shadow: 3px 3px 0 var(--border-color);
-      letter-spacing: 1px;
-      line-height: 1;
+      letter-spacing: 0; /* Убрали лишний межбуквенный интервал, уводящий букву */
     }
 
     .status-badge {
@@ -81,9 +82,7 @@
       color: var(--text-dark);
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 0.7rem;
-      line-height: 1;
       box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
     }
 
@@ -96,6 +95,7 @@
       box-shadow: 0 0 8px var(--accent-green);
     }
 
+    /* Карточка хоста */
     .host-card {
       background: var(--card-inner);
       border: 4px solid var(--border-color);
@@ -105,12 +105,6 @@
       flex-direction: column;
       gap: 1.2rem;
       box-shadow: 0 6px 0 var(--border-color);
-      transition: transform 0.15s, border-color 0.15s;
-    }
-
-    .host-card:hover {
-      border-color: #8c73ff;
-      transform: translateY(-2px);
     }
 
     .card-top {
@@ -124,7 +118,6 @@
       font-family: var(--font-pixel);
       font-size: 1.3rem;
       color: var(--text-dark);
-      line-height: 1.2;
     }
 
     .fw-badge {
@@ -132,32 +125,31 @@
       color: var(--text-light);
       font-family: var(--font-pixel);
       font-size: 0.75rem;
-      padding: 0.62rem 1rem;
+      padding: 0.6rem 1rem;
       border-radius: 10px;
       white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
+      display: inline-block;
+      line-height: 1.2;
     }
 
+    /* Чёткий URL */
     .card-url {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--text-muted);
-      background: rgba(0, 0, 0, 0.05);
-      padding: 0.6rem 1rem;
+      background: rgba(22, 16, 54, 0.08);
+      padding: 0.7rem 1rem;
       border-radius: 8px;
       word-break: break-all;
-      border: 1px dashed rgba(22, 16, 54, 0.2);
-      display: flex;
-      align-items: center;
+      border: 2px dashed rgba(22, 16, 54, 0.3);
     }
 
-    /* Исправленное центрирование кнопки Open Host */
+    /* Жёстко отцентрированная кнопка для WebKit PS4 */
     .card-action-btn {
       width: 100%;
-      height: 54px;
+      height: 56px;
+      line-height: 50px;
+      text-align: center;
       background: var(--card-bg);
       border: 4px solid var(--border-color);
       border-radius: 12px;
@@ -167,11 +159,7 @@
       box-shadow: 0 5px 0 var(--border-color);
       text-decoration: none;
       color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      padding-top: 2px; /* Компенсация базовой линии WebKit */
+      display: block;
       transition: background 0.15s, color 0.15s;
     }
 
@@ -192,7 +180,7 @@
   <div class="container">
     
     <div class="header-panel">
-      <div class="brand-title">PS4Host</div>
+      <div class="brand-title">PS4Hosts</div>
       <div class="status-badge">
         <span class="dot"></span>
         <span>ONLINE</span>
