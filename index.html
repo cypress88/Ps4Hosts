@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PS4Hosts</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>PS4Host</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -27,10 +25,6 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      -webkit-font-smoothing: none !important;
-      -moz-osx-font-smoothing: unset !important;
-      font-smooth: never !important;
-      text-rendering: optimizeSpeed;
     }
 
     body {
@@ -44,6 +38,7 @@
       padding: 2rem 1.5rem;
     }
 
+    /* Широкий контейнер для комфортного отображения на ТВ */
     .container {
       width: 95%;
       max-width: 1100px;
@@ -57,7 +52,7 @@
       background: var(--panel-bg);
       border: 4px solid var(--border-color);
       border-radius: 16px;
-      padding: 1.2rem 2rem;
+      padding: 1.4rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -69,7 +64,7 @@
       font-size: 1.8rem;
       color: var(--text-light);
       text-shadow: 3px 3px 0 var(--border-color);
-      letter-spacing: 0;
+      letter-spacing: 1px;
     }
 
     .status-badge {
@@ -105,6 +100,13 @@
       flex-direction: column;
       gap: 1.2rem;
       box-shadow: 0 6px 0 var(--border-color);
+      transition: transform 0.15s, border-color 0.15s;
+    }
+
+    /* Подсветка при наведении курсора PS4 */
+    .host-card:hover {
+      border-color: #8c73ff;
+      transform: translateY(-2px);
     }
 
     .card-top {
@@ -118,6 +120,7 @@
       font-family: var(--font-pixel);
       font-size: 1.3rem;
       color: var(--text-dark);
+      line-height: 1.4;
     }
 
     .fw-badge {
@@ -125,34 +128,31 @@
       color: var(--text-light);
       font-family: var(--font-pixel);
       font-size: 0.75rem;
-      padding: 0.6rem 1rem;
-      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
       white-space: nowrap;
-      display: inline-block;
-      line-height: 1.2;
     }
 
-    /* Чистый URL без пунктира */
+    /* Четкий URL */
     .card-url {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--text-muted);
-      background: rgba(22, 16, 54, 0.06);
-      padding: 0.8rem 1.2rem;
-      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
       word-break: break-all;
-      border: 2px solid rgba(22, 16, 54, 0.12); /* Аккуратная тонкая сплошная рамка */
+      border: 1px dashed rgba(22, 16, 54, 0.2);
     }
 
-    /* Кнопка */
+    /* Кнопка во всю ширину */
     .card-action-btn {
       width: 100%;
-      height: 56px;
-      line-height: 50px;
       text-align: center;
       background: var(--card-bg);
       border: 4px solid var(--border-color);
       border-radius: 12px;
+      padding: 1rem;
       font-family: var(--font-pixel);
       font-size: 0.95rem;
       cursor: pointer;
@@ -179,18 +179,20 @@
 
   <div class="container">
     
+    <!-- Top Bar -->
     <div class="header-panel">
-      <div class="brand-title">PS4Hosts</div>
+      <div class="brand-title">PS4Host</div>
       <div class="status-badge">
         <span class="dot"></span>
         <span>ONLINE</span>
       </div>
     </div>
 
+    <!-- Hosts List -->
     <div class="host-card">
       <div class="card-top">
         <span class="host-name">PSX8 Host</span>
-        <span class="fw-badge">FW 5.05 - 11.00+</span>
+        <span class="fw-badge">FW 5.05 - 13.52</span>
       </div>
       <div class="card-url">https://psx8.github.io/</div>
       <a href="https://psx8.github.io/" class="card-action-btn">Open Host</a>
@@ -199,7 +201,7 @@
     <div class="host-card">
       <div class="card-top">
         <span class="host-name">ModdedWarfare AIOFix</span>
-        <span class="fw-badge">FW 9.00 - 11.00+</span>
+        <span class="fw-badge">FW 13.02 - 13.52</span>
       </div>
       <div class="card-url">https://moddedwarfare.github.io/aiofix/</div>
       <a href="https://moddedwarfare.github.io/aiofix/" class="card-action-btn">Open Host</a>
@@ -208,7 +210,7 @@
     <div class="host-card">
       <div class="card-top">
         <span class="host-name">WebKitty ArabPixel</span>
-        <span class="fw-badge">FW 5.05 - 11.00+</span>
+        <span class="fw-badge">FW 6.72 - 13.52</span>
       </div>
       <div class="card-url">http://webkitty.arabpixel.net/</div>
       <a href="http://webkitty.arabpixel.net/" class="card-action-btn">Open Host</a>
@@ -217,7 +219,7 @@
     <div class="host-card">
       <div class="card-top">
         <span class="host-name">Mansoor0x polpNO</span>
-        <span class="fw-badge">FW 10.00 - 13.52+</span>
+        <span class="fw-badge">FW 11.00 - 13.52</span>
       </div>
       <div class="card-url">https://mansoor0x.github.io/polpNO/</div>
       <a href="https://mansoor0x.github.io/polpNO/" class="card-action-btn">Open Host</a>
@@ -226,7 +228,7 @@
     <div class="host-card">
       <div class="card-top">
         <span class="host-name">RawGame4 Host</span>
-        <span class="fw-badge">FW 9.00 - 11.00+</span>
+        <span class="fw-badge">FW 11.00 - 13.00</span>
       </div>
       <div class="card-url">https://rawgame4.github.io/</div>
       <a href="https://rawgame4.github.io/" class="card-action-btn">Open Host</a>
@@ -235,7 +237,7 @@
     <div class="host-card">
       <div class="card-top">
         <span class="host-name">GamerHack G2ALL</span>
-        <span class="fw-badge">FW 5.05 - 9.00</span>
+        <span class="fw-badge">FW 5.05 - 13.52</span>
       </div>
       <div class="card-url">https://gamerhack.github.io/g2all/index.html</div>
       <a href="https://gamerhack.github.io/g2all/index.html" class="card-action-btn">Open Host</a>
